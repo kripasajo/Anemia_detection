@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+
+# Virtual environment
+venv/
+env/
+
+# ML models
+*.h5
+*.keras
+*.pkl
+
+# Dataset files
+*.csv
+*.zip
+
+# VS Code
+.vscode/
+
+# OS files
+.DS_Store
