@@ -22,239 +22,123 @@ st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
-/* GLOBAL */
-/* FORCE LIGHT BACKGROUND */
-html, body, .stApp {
-    background-color: #f4f7fb !important;
-    color: #1f2937 !important;
-}
-
-/* also override main container */
-[data-testid="stAppViewContainer"] {
-    background-color: #f4f7fb !important;
-}
-
-[data-testid="stHeader"] {
-    background-color: #f4f7fb !important;
-}
-
-[data-testid="stToolbar"] {
-    background-color: #f4f7fb !important;
+html, body, [class*="css"] {
+    font-family: 'Inter', sans-serif;
+    background-color: #0a0a0f;
+    color: #e2e2ee;
 }
 #MainMenu, footer, header { visibility: hidden; }
-.block-container { padding-top: 2rem; padding-bottom: 2rem; }
+.block-container { padding-top: 1.8rem; padding-bottom: 2rem; }
 
-/* SIDEBAR */
+/* Sidebar */
 section[data-testid="stSidebar"] {
-    background-color: #ffffff !important;
-    border-right: 1px solid #e5e7eb;
+    background-color: #0d0d15 !important;
+    border-right: 1px solid #1e1e2e;
 }
-section[data-testid="stSidebar"] * {
-    color: #374151 !important;
-}
+section[data-testid="stSidebar"] div,
+section[data-testid="stSidebar"] span,
+section[data-testid="stSidebar"] p,
+section[data-testid="stSidebar"] label { color: #e2e2ee !important; }
 
-/* INPUTS */
-.stTextInput input,
-.stNumberInput input {
-    background-color: #f9fafb !important;
-    border: 1px solid #d1d5db !important;
-    border-radius: 10px !important;
-    color: #111827 !important;
+/* Inputs */
+.stTextInput > div > div > input,
+.stSelectbox > div > div > div,
+.stNumberInput > div > div > input {
+    background-color: #13131f !important;
+    border: 1px solid #2a2a3e !important;
+    border-radius: 8px !important;
+    color: #e2e2ee !important;
+    font-family: 'Inter', sans-serif !important;
 }
+.stTextInput label, .stSelectbox label,
+.stNumberInput label, .stRadio label { color: #e2e2ee !important; }
 
-/* safer selectbox targeting */
-[data-baseweb="select"] > div {
-    background-color: #f9fafb !important;
-    border-radius: 10px !important;
-}
-.stTextInput label,
-.stSelectbox label,
-.stNumberInput label,
-.stRadio label {
-    color: #374151 !important;
-}
-             
-/* CENTER CARD CONTAINER */
-.main-card {
-    background: white;
-    padding: 35px 30px;
-    border-radius: 16px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-}
-/* 🔴 BUTTONS (BIG + PROFESSIONAL) */
+/* Buttons */
 .stButton > button {
-    height: 65px !important;
-    font-size: 0.95rem !important;
-    border-radius: 12px !important;
-    background: linear-gradient(135deg, #dc2626, #ef4444) !important;
-    color: white !important;
-    border: none !important;
-    font-weight: 600 !important;
-    box-shadow: 0 4px 14px rgba(220, 38, 38, 0.25);
-    transition: all 0.2s ease !important;
+    background: linear-gradient(135deg, #b91c1c, #dc2626) !important;
+    color: white !important; border: none !important;
+    border-radius: 8px !important; font-weight: 600 !important;
+    font-family: 'Inter', sans-serif !important;
+    transition: all 0.2s !important;
 }
+.stButton > button:hover { opacity: 0.85 !important; transform: translateY(-1px) !important; }
 
-.stButton > button:hover {
-    transform: translateY(-2px) !important;
-    box-shadow: 0 6px 18px rgba(220, 38, 38, 0.35);
-}
-
-/* FILE UPLOADER */
+/* File uploader */
 div[data-testid="stFileUploader"] {
-    background-color: #ffffff !important;
-    border: 2px dashed #d1d5db !important;
-    border-radius: 14px !important;
+    background-color: #13131f !important;
+    border: 2px dashed #2a2a3e !important;
+    border-radius: 12px !important;
 }
 
-/* PAGE TITLES */
+/* Page title */
 .page-title {
-    font-size: 1.9rem;
-    font-weight: 700;
-    color: #111827;
-    border-left: 4px solid #dc2626;
-    padding-left: 12px;
-    margin-bottom: 4px;
+    font-size: 1.8rem; font-weight: 700; color: #f1f1f8;
+    border-left: 4px solid #dc2626; padding-left: 14px; margin-bottom: 4px;
 }
-.page-sub {
-    color: #6b7280;
-    font-size: 0.9rem;
-    margin-bottom: 20px;
-}
+.page-sub { color: #8888aa; font-size: 0.87rem; padding-left: 18px; margin-bottom: 22px; }
 
-/* CARDS */
+/* Cards */
 .card {
-    background: #ffffff;
-    border: 1px solid #e5e7eb;
-    border-radius: 16px;
-    padding: 20px 22px;
-    margin-bottom: 16px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    background: #13131f; border: 1px solid #1e1e2e;
+    border-radius: 14px; padding: 22px 26px; margin-bottom: 16px;
 }
-
-/* METRIC CARDS */
 .metric-card {
-    background: #ffffff;
-    border: 1px solid #e5e7eb;
-    border-radius: 14px;
-    padding: 18px;
-    text-align: center;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.04);
+    background: #13131f; border: 1px solid #1e1e2e;
+    border-radius: 12px; padding: 18px 20px; text-align: center;
 }
-.metric-label {
-    font-size: 0.75rem;
-    color: #6b7280;
-    margin-bottom: 6px;
-}
-.metric-value {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #111827;
-}
-.metric-tag {
-    font-size: 0.7rem;
-    color: #dc2626;
-}
+.metric-label { font-size: 0.72rem; color: #8888aa; text-transform: uppercase;
+    letter-spacing: 0.08em; margin-bottom: 6px; }
+.metric-value { font-size: 1.8rem; font-weight: 700; }
+.metric-tag { font-size: 0.7rem; color: #dc2626; margin-top: 3px; }
 
-/* RESULT SEVERITY */
-.sev-normal  { background: #ecfdf5; border: 1px solid #22c55e; border-radius: 12px; padding: 20px; }
-.sev-mild    { background: #fef9c3; border: 1px solid #eab308; border-radius: 12px; padding: 20px; }
-.sev-moderate{ background: #ffedd5; border: 1px solid #f97316; border-radius: 12px; padding: 20px; }
-.sev-severe  { background: #fee2e2; border: 1px solid #ef4444; border-radius: 12px; padding: 20px; }
+/* Result severity */
+.sev-normal  { background: rgba(34,197,94,0.1);  border: 1px solid #16a34a; border-radius: 12px; padding: 20px 24px; }
+.sev-mild    { background: rgba(234,179,8,0.1);  border: 1px solid #ca8a04; border-radius: 12px; padding: 20px 24px; }
+.sev-moderate{ background: rgba(249,115,22,0.1); border: 1px solid #ea580c; border-radius: 12px; padding: 20px 24px; }
+.sev-severe  { background: rgba(220,38,38,0.1);  border: 1px solid #dc2626; border-radius: 12px; padding: 20px 24px; }
+.sev-title { font-size: 1.2rem; font-weight: 700; margin-bottom: 4px; }
+.sev-sub   { font-size: 0.85rem; color: #8888aa; }
 
-.sev-title { font-size: 1.2rem; font-weight: 700; }
-.sev-sub { font-size: 0.9rem; color: #6b7280; }
-
-/* HB BOX */
+/* Hb gauge */
 .hb-box {
-    background: #ffffff;
-    border: 1px solid #e5e7eb;
-    border-radius: 12px;
-    padding: 16px;
-    margin-top: 14px;
+    background: #0d0d15; border: 1px solid #1e1e2e;
+    border-radius: 10px; padding: 14px 18px; margin-top: 14px;
 }
-.hb-label {
-    font-size: 0.75rem;
-    color: #6b7280;
-}
-.hb-value {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #111827;
-}
+.hb-label { font-size: 0.75rem; color: #8888aa; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.07em; }
+.hb-value { font-size: 2rem; font-weight: 700; }
 
-/* HISTORY */
+/* History rows */
 .hist-row {
-    background: #ffffff;
-    border: 1px solid #e5e7eb;
-    border-radius: 10px;
-    padding: 12px 14px;
-    margin-bottom: 8px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 0.84rem;
-    color: #374151;
+    background: #13131f; border: 1px solid #1e1e2e; border-radius: 10px;
+    padding: 12px 16px; margin-bottom: 8px; display: flex;
+    align-items: center; gap: 12px; font-size: 0.84rem; color: #e2e2ee;
 }
+.badge { padding: 2px 10px; border-radius: 20px; font-size: 0.72rem; font-weight: 600; }
+.badge-normal   { background: rgba(34,197,94,0.2);  color: #22c55e; }
+.badge-mild     { background: rgba(234,179,8,0.2);  color: #eab308; }
+.badge-moderate { background: rgba(249,115,22,0.2); color: #f97316; }
+.badge-severe   { background: rgba(220,38,38,0.2);  color: #ef4444; }
 
-/* BADGES */
-.badge {
-    padding: 2px 10px;
-    border-radius: 20px;
-    font-size: 0.72rem;
-    font-weight: 600;
-}
-.badge-normal   { background: #dcfce7; color: #16a34a; }
-.badge-mild     { background: #fef9c3; color: #ca8a04; }
-.badge-moderate { background: #ffedd5; color: #ea580c; }
-.badge-severe   { background: #fee2e2; color: #dc2626; }
-
-/* USER BADGE */
+/* User badge sidebar */
 .user-badge {
-    background: #ffffff;
-    border: 1px solid #e5e7eb;
-    border-radius: 10px;
-    padding: 10px 14px;
-    margin-bottom: 14px;
-    font-size: 0.82rem;
-    color: #374151;
+    background: #13131f; border: 1px solid #1e1e2e;
+    border-radius: 10px; padding: 10px 14px; margin-bottom: 14px;
+    font-size: 0.82rem; color: #e2e2ee;
 }
 
-/* CONSENT BOX */
+/* Consent box */
 .consent-box {
-    background: #fee2e2;
-    border: 1px solid #ef4444;
-    border-radius: 12px;
-    padding: 18px 22px;
-    margin: 16px 0;
+    background: rgba(220,38,38,0.08); border: 1px solid #dc2626;
+    border-radius: 12px; padding: 18px 22px; margin: 16px 0;
 }
 
-/* SECTION HEAD */
+/* Tab-like section headers */
 .section-head {
-    font-size: 1rem;
-    font-weight: 600;
-    color: #dc2626;
-    border-bottom: 1px solid #e5e7eb;
-    padding-bottom: 8px;
-    margin-bottom: 16px;
+    font-size: 1rem; font-weight: 600; color: #dc2626;
+    border-bottom: 1px solid #1e1e2e; padding-bottom: 8px; margin-bottom: 16px;
 }
 
-/* CHECKBOX */
-div[data-testid="stCheckbox"] label {
-    color: #374151 !important;
-}
-            button[role="tab"] {
-    color: #6b7280 !important;
-    font-weight: 500;
-}
-
-button[role="tab"][aria-selected="true"] {
-    color: #dc2626 !important;
-    border-bottom: 2px solid #dc2626 !important;
-}
-
-button[role="tab"]:hover {
-    color: #111827 !important;
-}
+div[data-testid="stCheckbox"] label { color: #e2e2ee !important; }
 </style>
 """, unsafe_allow_html=True)
 
@@ -419,22 +303,16 @@ for key, val in [("logged_in", False), ("user", None), ("consent_given", False)]
 def auth_page():
     st.markdown("<br>", unsafe_allow_html=True)
     col1, col2, col3 = st.columns([1, 1.1, 1])
-    
     with col2:
-        
         st.markdown("""
-        <div style='text-align:center;margin-bottom:28px;'>
-        <div style='font-size:2.5rem;'>🩸</div>
-
-        <div style='font-size:1.9rem;font-weight:700;color:#111827;'>
-                HEMO<span style='color:#dc2626;'>SCAN</span>
-        </div>
-
-        <div style='font-size:0.9rem;color:#6b7280;margin-top:6px;'>
+        <div style="text-align:center;margin-bottom:28px;">
+            <div style="font-size:2.8rem;">🩸</div>
+            <div style="font-size:1.8rem;font-weight:700;color:#f1f1f8;letter-spacing:-0.5px;">HEMOSCAN</div>
+            <div style="font-size:0.82rem;color:#8888aa;margin-top:4px;">
                 AI-Based Non-Invasive Hemoglobin Screening
+            </div>
         </div>
-        </div>
-        """, unsafe_allow_html=True) 
+        """, unsafe_allow_html=True)
 
         tab_login, tab_register = st.tabs(["🔑  Login", "📝  Register"])
 
@@ -485,7 +363,7 @@ def auth_page():
                         st.success(msg + " Please log in.")
                     else:
                         st.error(msg)
-        
+
 # ══════════════════════════════════════════════════════════════════════════════
 # SIDEBAR (after login)
 # ══════════════════════════════════════════════════════════════════════════════
@@ -510,7 +388,12 @@ def sidebar():
         </div>
         """, unsafe_allow_html=True)
 
-        page = st.session_state.get("page", "Dashboard")
+        page = st.radio("Navigation", [
+            "🏠  Dashboard",
+            "🔬  New Screening",
+            "📋  Screening History",
+            "ℹ️  About"
+        ], label_visibility="collapsed")
 
         st.markdown("---")
         if st.button("🚪  Logout", use_container_width=True):
@@ -530,19 +413,6 @@ def dashboard_page():
     st.markdown(f'<div class="page-sub">Welcome back, {u["name"]} — here\'s your screening summary</div>',
                 unsafe_allow_html=True)
 
-    col1, col2, col3 = st.columns(3)
-
-    if col1.button("🔬 New Screening", use_container_width=True):
-        st.session_state.page = "Screening"
-        st.rerun()
-
-    if col2.button("📋 History", use_container_width=True):
-        st.session_state.page = "History"
-        st.rerun()
-    if col3.button("ℹ️ About", use_container_width=True):
-        st.session_state.page = "About"
-        st.rerun()
-        
     total, anemic = get_stats(u["user_id"])
     normal = total - anemic
 
@@ -938,53 +808,20 @@ def about_page():
     </div>
     """, unsafe_allow_html=True)
 
-#new
-def main_navigation():
-    st.markdown('<div class="page-title">HEMOSCAN</div>', unsafe_allow_html=True)
-    st.markdown('<div class="page-sub">AI-powered anemia detection dashboard</div>', unsafe_allow_html=True)
-
-    col1, col2 = st.columns(2)
-    col3, col4 = st.columns(2)
-
-    if col1.button("🏠 Dashboard", use_container_width=True):
-        st.session_state.page = "Dashboard"
-
-    if col2.button("🔬 New Screening", use_container_width=True):
-        st.session_state.page = "Screening"
-
-    if col3.button("📋 History", use_container_width=True):
-        st.session_state.page = "History"
-
-    if col4.button("ℹ️ About", use_container_width=True):
-        st.session_state.page = "About"
 # ══════════════════════════════════════════════════════════════════════════════
 # ROUTER
 # ══════════════════════════════════════════════════════════════════════════════
 if not st.session_state.logged_in:
     auth_page()
 else:
-    sidebar()
-    page = st.session_state.get("page", "Dashboard")
-
+    page = sidebar()
     st.markdown("<div style='height:4px'></div>", unsafe_allow_html=True)
 
-    if page == "Dashboard":
+    if "Dashboard" in page:
         dashboard_page()
-
-    elif page == "Screening":
-        if st.button("⬅ Back"):
-            st.session_state.page = "Dashboard"
-            st.rerun()
+    elif "Screening" in page and "History" not in page:
         screening_page()
-
-    elif page == "History":
-        if st.button("⬅ Back"):
-            st.session_state.page = "Dashboard"
-            st.rerun()
+    elif "History" in page:
         history_page()
-
-    elif page == "About":
-        if st.button("⬅ Back"):
-            st.session_state.page = "Dashboard"
-            st.rerun()
+    elif "About" in page:
         about_page()
