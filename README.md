@@ -44,7 +44,10 @@ Python, TensorFlow, Keras, MobileNetV2, OpenCV, NumPy, Pandas, Streamlit, SQLite
 ---
 
 ## 🏗️ Project Structure
-<img width="511" height="176" alt="image" src="https://github.com/user-attachments/assets/840f03c6-0b5f-454b-807f-c11ff1e08a2f" />
+<img width="511" height="176" alt="image" src="https://github.com/user-attachments/assets/840f03c6-0b5f-454b-807f-c11ff1e08a2f" /n>
+
+
+
 🌐 Deployment
 This application is deployed using Hugging Face Spaces (Streamlit + Docker environment) and is accessible via a public web link.
 
